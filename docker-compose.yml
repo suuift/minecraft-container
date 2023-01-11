@@ -3,7 +3,7 @@ services:
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 # Minecraft Vault Hunters world with the 1.18.2 update
   vault-hunters:
-    #latest is an alias of 3rd-edition which is alias of wotupfoo/vault-hunters:3rd-edition-update-4.1
+    #latest is an alias of 3rd-edition which is alias of wotupfoo/vault-hunters:3rd-edition-update-5
     image: wotupfoo/vault-hunters:3rd-edition
     tty: true
 #    stdin_open: true
