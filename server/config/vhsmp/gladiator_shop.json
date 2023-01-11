@@ -1,0 +1,27 @@
+{
+  "TRADES": [
+    {
+      "value": {
+        "tradeType": "ITEM_TRADE",
+        "costMin": 1,
+        "costMax": 9,
+        "item": "minecraft:apple",
+        "nbt": "{foo:\u0027Bar\u0027}",
+        "amountMin": 3,
+        "amountMax": 9
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "tradeType": "DISCOVERY",
+        "costMin": 1,
+        "costMax": 9,
+        "model": "the_vault:gear/armor/angel/chestplate",
+        "amountMin": 0,
+        "amountMax": 0
+      },
+      "weight": 1
+    }
+  ]
+}
