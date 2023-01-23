@@ -11,8 +11,7 @@ RUN apt-get update && apt-get install -y curl dos2unix && \
 COPY launch.sh /launch.sh
 RUN dos2unix /launch.sh
 RUN chmod +x /launch.sh
-# Clean up previous deployments
-RUN rm -rf ./config  ./mods ./scripts ./defaultconfigs ./patchouli_books
+
 # Copy fresh version of the server to the persistent storage ./server
 COPY --chown=minecraft:minecraft server /server
 RUN dos2unix /server/start.sh

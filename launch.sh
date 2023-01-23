@@ -11,43 +11,10 @@ else
 	exit 9
 fi
 
-# If the server properties is missing it's likely a new installation and we need to copy the files from the /server directory to setup a new server
-if ! [[ -f server.properties ]]; then
-	cp -rf /server/* /data/
-fi
-
-# Download Iskall's pre-generated world if the LEVEL="Iskall-world" and 
-# the ./Iskall-world directory does not already exist
-if [[ "$LEVEL" = "Iskall-world" ]] && ! [[ -d "./Iskall-world" ]]; then
-	ISKALL_GOOGLE_DRIVE_URL="https://shorturl.at/ehvLX"
-	ISKALL_WORLD_ZIP="Vault-Hunters-15k-vanilla_pregen.zip"
-
-	# Do we already have the zip file?
-	if ! [[ -f ${ISKALL_WORLD_ZIP} ]]; then
-		# Nope. Let's get it.
-		if command -v wget &> /dev/null; then
-			echo "DEBUG: (wget) Downloading 'https://drive.google.com/u/0/uc?id=1aMymaF_oEJFiG7F2N1ojA9rLdfRdZNuJ&export=download&confirm=t'"
-			wget \
-			--no-check-certificate \
-			'https://drive.google.com/u/0/uc?id=1aMymaF_oEJFiG7F2N1ojA9rLdfRdZNuJ&export=download&confirm=t' \
-			-O "${ISKALL_WORLD_ZIP}"
-		else
-			echo "ERROR: curl was not found on your system to download the Iskall pre-gen world. Please file an issue on github:/wotupfoo/minecraft-container/tree/vault-hunters."
-			exit 1
-		fi
-		echo "INFO: Downloaded ${ISKALL_WORLD_ZIP} from Iskall's Google Drive"
-	fi
-
-	echo "INFO: Making the Iskall-world directory"
-	mkdir Iskall-world
-	if command -v unzip &> /dev/null; then
-		echo "INFO: UNZIPPING the world into ./Iskall-world"
-		unzip "${ISKALL_WORLD_ZIP}" -d Iskall-world
-	else
-		echo "ERROR: UNZIP not found to extract the downloaded world"
-	fi
-	echo "INFO: Successfully installed the Iskall pre-generated world"
-fi
+# Clean up previous deployments
+rm -rf ./config  ./defaultconfigs ./mods ./packmenu ./patchouli_books  ./scripts
+# Install the server files of the current update
+cp -rf /server/* /data/
 
 if [[ -n "$MOTD" ]]; then
     sed -i "/motd\s*=/ c motd=$MOTD" server.properties
