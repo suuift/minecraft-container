@@ -11,6 +11,7 @@ var dye = {
   "gray_dye": "gray",
   "black_dye": "black",
   "orange_dye": "orange",
+  "green_dye": "green",
   "yellow_dye": "yellow",
   "cyan_dye": "cyan",
   "purple_dye": "purple",
@@ -58,7 +59,7 @@ craftingTable.addShapeless("rs_16k_storage_disk_shapeless", <item:refinedstorage
 
 craftingTable.addShaped("rs_64k_storage_part", <item:refinedstorage:64k_storage_part>, [
     [<item:the_vault:black_chromatic_steel_ingot>, <item:the_vault:vault_diamond_block>, <item:the_vault:black_chromatic_steel_ingot>],
-    [<item:refinedstorage:16k_storage_part>, <item:the_vault:gem_pog>, <item:refinedstorage:16k_storage_part>],
+    [<item:refinedstorage:16k_storage_part>, <item:the_vault:echo_pog>, <item:refinedstorage:16k_storage_part>],
     [<item:the_vault:black_chromatic_steel_ingot>, <item:refinedstorage:16k_storage_part>, <item:the_vault:black_chromatic_steel_ingot>]
 ]);
 
