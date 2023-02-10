@@ -7,10 +7,10 @@ services:
     image: wotupfoo/vault-hunters:3rd-edition
 
 # If you are running the server with the user `root` you need to uncomment this line
-    user:root
+#    user: root
 
-# If you want to be able to exec in uncomment these lines
-#     tty: true
+# If you want to be able to exec in with the right characters woring, uncomment these lines
+#    tty: true
 #    stdin_open: true
 
 #   Map the network ports from the container to the host so that it can be accessed
@@ -32,7 +32,7 @@ services:
         - EULA=true
 # The amount of system memory the server is allowed to use. Vault Hunters needs at least 6GB.
         - JVM_OPTS=-Xmx16g
-# This happens to be the world I chose to use. Comment to make it random or put in your own value.
+# This happens to be the world I chose to use. Comment it out to make it random or put in your own value.
         - LEVELSEED="7229311241545822825"
 
 # default enironment variable values
