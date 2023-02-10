@@ -1,14 +1,16 @@
 version: "3.8"
 services:
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-# Minecraft Vault Hunters world with the 1.18.2 update
+# Minecraft Vault Hunters 3rd Edition
   vault-hunters:
-    #latest is an alias of 3rd-edition which is alias of wotupfoo/vault-hunters:3rd-edition-update-5
+    #'latest' is an alias of '3rd-edition' which is alias of 'wotupfoo/vault-hunters:3rd-edition-update-7H'
     image: wotupfoo/vault-hunters:3rd-edition
     tty: true
 #    stdin_open: true
     ports:
         - "25565:25565"
+        # RCON Port
+#        - "25575:25575"
     volumes:
       - ./vault-hunters-1.18.2:/data
     environment:
@@ -17,9 +19,9 @@ services:
         - LEVELSEED="7229311241545822825"
 # default enironment variable values
 #        - JVM_OPTS : "-Xms2g -Xmx6g"
-#        - JAVA_HOME : "/usr/local/openjdk-8"
+#        - JAVA_HOME : "/usr/local/openjdk-17"
 #        - JAVA_VERSION : "17"
-#        - MOTD : "Vault Hunters 1.13.9 Modded Minecraft Server Powered by Docker"
+#        - MOTD : "Vault Hunters 3rd Edition Powered by Docker"
 #        - LEVEL : "Vault-Hunters"
 #        - LEVELSEED : default is random
 #        - GAMEMODE : "survival"
