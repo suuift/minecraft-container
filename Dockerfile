@@ -25,21 +25,18 @@ VOLUME /data
 WORKDIR /data
 
 EXPOSE 25565/tcp
+# RCON
+# EXPOSE 25575/tcp
 
 CMD ["/launch.sh"]
 
 ENV EULA "false"
 
-#ENV MOTD "Vault Hunters 1.18.2-alpha-0.0.1 Modded Minecraft Server Powered by Docker"
-
-# default
-# ENV LEVEL "VH3" 
-#  loads Iskall's pre-generated world
-# ENV LEVEL "Iskall-world"
-
-ENV GAMEMODE "survival"
-
-ENV DIFFICULTY "normal"
+# defaults
+# ENV LEVEL "Vault-Hunters" 
+# ENV MOTD "Vault Hunters 3rd Edition Powered by Docker"
+# ENV GAMEMODE "survival"
+# ENV DIFFICULTY "normal"
 
 # Start with 2G of ram expandable to 6G
 ENV JVM_OPTS "-Xms2g -Xmx6g"
