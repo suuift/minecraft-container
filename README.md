@@ -2,6 +2,7 @@
 <!-- MarkdownTOC autolink="true" indent="  " markdown_preview="github" -->
 
 - [Description](#description)
+- [Fast Start](#fast-start)
 - [Requirements](#requirements)
 - [Options](#options)
 - [Adding Minecraft Operators](#adding-minecraft-operators)
@@ -18,6 +19,14 @@ The docker on first run will download the same version as tagged of Vault Hunter
 
 After the first run it will simply start the server.
 
+## Fast Start...
+
+The easiest way to stary using this container is to use the `docker-compose.yaml` as it has everything you need to get going quick.
+
+Simply run...
+`docker-compose up`
+After a while (if you don't want the console to be stuck in that logging) you can do `Ctrl-C` to shut it down and then `docker-compose start` which will run it as a service instead. Unfortunately on first run you have to do `up` for it to create the environment.
+
 ## Requirements
 
 - Make sure that the environment variable EULA is set to `true`
@@ -30,15 +39,9 @@ After the first run it will simply start the server.
     - Note that if you map the port to a different port number on the host the Minecraft Multiplayer user interface will not find the server on the local network
     - `-p 25565:25565`
 
-## Using Iskall's pre-generated world
-If you want the world to use Iskall's provided pre-generated world (5GB) where the immediate area is Vanilla minecraft and beyond that are the modded biomes, set the LEVEL to "Iskall-world" (see below) and it will automatically download and install it when the container first loads.
-The pre-generated world was provided in the description of Iskall's Single Player Vault-Hunters YouTube series in Episode 2. `https://shorturl.at/ehvLX` (Google Drive link)
 
 This is the default world, generated from scratch on first boot
 > `LEVEL` Vault-Hunters
-
-This is the Iskall pre-generated world and will be automatically downloaded and installed (5GB download space required + 5GB of extracted world)
-> `LEVEL` Iskall-world
 
 ## Options
 
@@ -88,10 +91,13 @@ The main branch is dead. Do not use it.
 
 ## DockerHub image
 Full URI
-> *docker.io/wotupfoo/vault-hunters:1.13.9* 
+> *docker.io/wotupfoo/vault-hunters:latest* 
+or
+> *docker.io/wotupfoo/vault-hunters:3rd-edition* 
 
 Shorthand
-> *wotupfoo/vault-hunters:1.13.9*
+> *wotupfoo/vault-hunters:latest*
+> *wotupfoo/vault-hunters:3rd-edition*
 
 DockerHub webpage
 > https://hub.docker.com/r/wotupfoo/vault-hunters/tags
