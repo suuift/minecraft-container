@@ -3,7 +3,7 @@ services:
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 # Minecraft Vault Hunters 3rd Edition
   vault-hunters:
-    #'latest' is an alias of '3rd-edition' which is alias of 'wotupfoo/vault-hunters:3rd-edition-update-7H'
+    #'latest' is an alias of '3rd-edition' which is alias of 'wotupfoo/vault-hunters:3rd-edition-update-7.7'
     image: wotupfoo/vault-hunters:3rd-edition
 
 # If you are running the server with the user `root` you need to uncomment this line

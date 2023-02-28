@@ -12,7 +12,6 @@ COPY launch.sh /launch.sh
 RUN dos2unix /launch.sh
 RUN chmod +x /launch.sh
 
-# Copy fresh version of the server to the persistent storage ./server
 COPY --chown=minecraft:minecraft server /server
 RUN dos2unix /server/start.sh
 RUN chmod +x /server/start.sh
