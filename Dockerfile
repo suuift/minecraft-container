@@ -2,9 +2,9 @@
 
 FROM openjdk:17-jdk-buster
 
-LABEL version="1.18.0"
+LABEL version="1.18.0" 
 
-RUN apt-get update && apt-get install -y curl dos2unix && \
+RUN apt-get update && apt-get install -y git && apt-get install -y curl dos2unix && \
  addgroup minecraft && \
  adduser --home /data --ingroup minecraft --disabled-password minecraft
 
